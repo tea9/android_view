@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+              android:orientation="vertical"
+>
+
+        <Button
+                android:layout_centerHorizontal="true"
+                android:background="#09d8ef"
+                android:id="@+id/bt"
+                android:textColor="#fff"
+                android:text="更换进度条类型"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    <com.demo.android_view.view.MyLinearProgressView
+            android:id="@+id/mlpv"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            />
+
+    <com.demo.android_view.view.LineProgressView2
+            android:padding="10dp"
+            android:layout_margin="20dp"
+            android:id="@+id/lpv2"
+            android:layout_width="match_parent"
+
+
+                                                     android:layout_height="20dp"/>
+    <com.demo.android_view.mview.LineProgressBarView
+            android:id="@+id/lll"
+            android:layout_width="match_parent"
+            app:bar_type="1"
+                                                    android:layout_height="wrap_content"/>
+
+</LinearLayout>
