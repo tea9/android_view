@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import com.demo.android_view.R;
 import com.demo.android_view.mview.LineProgressBarView;
+import com.demo.android_view.mview.RingProgressBarView;
 import com.demo.android_view.view.LineProgressView2;
 import com.demo.android_view.view.MyLinearProgressView;
 
@@ -14,6 +15,11 @@ import com.demo.android_view.view.MyLinearProgressView;
  * created by tea9 at 2018/11/14
  */
 public class TestActivity extends AppCompatActivity {
+
+    private float mTotalProgress = 40f;
+    private float mCurrentProgress = 0;
+    //进度条
+    private RingProgressBarView mTasksView;
 
     MyLinearProgressView mlpv;
     Button bt;
@@ -39,5 +45,28 @@ public class TestActivity extends AppCompatActivity {
 //                /lpv2.setType(2);
             }
         });
+
+//        mTasksView = (RingProgressBarView) findViewById(R.id.tasks_view);
+//        mTasksView.setProgress(43.9f);
+
+//        new Thread(new ProgressRunable()).start();
+    }
+
+    class ProgressRunable implements Runnable {
+        @Override
+        public void run() {
+            while (mCurrentProgress < mTotalProgress+1) {
+                mCurrentProgress += 1;
+                if (mCurrentProgress>mTotalProgress){
+                    mCurrentProgress = mTotalProgress;
+                }
+                mTasksView.setProgress(mCurrentProgress);
+                try {
+                    Thread.sleep( 57);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

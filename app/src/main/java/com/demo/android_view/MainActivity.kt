@@ -4,13 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.demo.android_view.activity.LineProgressBarActivity
+import com.demo.android_view.activity.RingProgressBarActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when(p0!!.id){
-            R.id.btn1 -> startActivity(Intent())
-            R.id.btn2 -> startActivity(Intent())
+            R.id.btn1 -> startActivity(Intent(this,LineProgressBarActivity::class.java))
+            R.id.btn2 -> startActivity(Intent(this,RingProgressBarActivity::class.java))
         }
     }
 

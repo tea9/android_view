@@ -44,7 +44,7 @@ public class LineProgressBarView extends View {
         color_b = typedArray.getColor(R.styleable.LineProgressBarView_color_b,Color.parseColor("#41CFFF"));
         bar_height = typedArray.getDimension(R.styleable.LineProgressBarView_bar_height,30f);
         bar_width = typedArray.getDimension(R.styleable.LineProgressBarView_bar_width,0);
-        margin = typedArray.getInteger(R.styleable.LineProgressBarView_margin,dp2px(10));
+        margin = typedArray.getInteger(R.styleable.LineProgressBarView_margin,dp2px(30));
         num_a = typedArray.getFloat(R.styleable.LineProgressBarView_num_a,40);
         num_b = typedArray.getFloat(R.styleable.LineProgressBarView_num_b,40);
         type = typedArray.getInteger(R.styleable.LineProgressBarView_bar_type,0);
@@ -52,6 +52,9 @@ public class LineProgressBarView extends View {
     }
     protected int dp2px(int dpVal) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dpVal,getResources().getDisplayMetrics());
+    }
+    protected float dp2px(float dpVal) {
+        return (float) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dpVal,getResources().getDisplayMetrics());
     }
     private void initPaint() {
         back_paint = getPaint(Paint.Style.FILL,background_color,bar_height);
@@ -76,8 +79,8 @@ public class LineProgressBarView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         width = w;
         height = h;
-        startX = dp2px(margin);
-        endX = width-dp2px(margin);
+        startX = margin;
+        endX = width-margin;
     }
 
     @Override
@@ -93,6 +96,7 @@ public class LineProgressBarView extends View {
         if (type==0) {
 
             // -><-
+            // 从两边往中间画
             float length_a = (endX*num_a/100)+startX-(num_a/100*(startX));
             float length_b = (startX*num_b/100)+endX-(num_b/100*(endX));
 //            Log.e("shaomiao","lenth:"+length_a);
@@ -107,12 +111,18 @@ public class LineProgressBarView extends View {
             canvas.drawLine(endX, height / 2, length_b - 2, height / 2, num_b_paint);
         } else if (type == 1){
             //<-|->
-            float centre=(endX-startX)/2;
+            // 从中间往两边画
+            float centre=(endX-startX)/2+margin;
             float length_a = (startX*num_b/100)+centre-(num_b/100*(centre));
             float length_b = (endX*num_a/100)+centre-(num_a/100*(centre));
 //            Log.e("shaomiao","centre:"+centre);
 //            Log.e("shaomiao","length_a1:"+length_a);
 //            Log.e("shaomiao","length_b1:"+length_b);
+//            num_a_paint.setStrokeCap(Paint.Cap.BUTT);
+//            num_b_paint.setStrokeCap(Paint.Cap.BUTT);
+//            canvas.drawLine(centre, height / 2, centre+10, height / 2, num_b_paint);
+//            canvas.drawLine(endX, height / 2, endX-10, height / 2, num_a_paint);
+//            canvas.drawLine(startX, height / 2, startX+10, height / 2, num_a_paint);
             num_a_paint.setStrokeCap(Paint.Cap.BUTT);
             canvas.drawLine(centre, height / 2, length_a, height / 2, num_a_paint);
             num_a_paint.setStrokeCap(Paint.Cap.ROUND);
@@ -148,6 +158,11 @@ public class LineProgressBarView extends View {
             }
         });
         anim.start();
+    }
+
+    public void setType(int type) {
+        this.type = type;
+        invalidate();
     }
 }
 
