@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <!--<com.demo.android_view.mview.VerticalBarView-->
+            <!--android:background="@android:color/holo_red_dark"-->
+            <!--android:layout_width="20dp"-->
+                                                 <!--android:layout_height="50dp"/>-->
+
+    <com.demo.android_view.mview.VerticalBarView android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"/>
+
+</android.support.constraint.ConstraintLayout>

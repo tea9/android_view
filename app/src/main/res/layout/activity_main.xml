@@ -11,5 +11,7 @@
     <Button android:id="@+id/btn2"
             style="@style/BtnStyle"
             android:text="圆环进度条"/>
-
+    <Button android:id="@+id/btn3"
+            style="@style/BtnStyle"
+            android:text="圆角小竖条"/>
 </GridLayout>

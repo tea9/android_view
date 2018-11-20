@@ -69,5 +69,12 @@
         <attr name="font_size" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="VerticalBarView">
+        <attr name="line_width" format="dimension"/>
+        <attr name="line_height" format="dimension"/>
+        <attr name="line_margin" format="dimension"/>
+        <attr name="line_color" format="color"/>
+    </declare-styleable>
+
 
 </resources>
