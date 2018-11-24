@@ -19,6 +19,7 @@
         <activity android:name=".activity.LineProgressBarActivity"/>
         <activity android:name=".activity.RingProgressBarActivity"/>
         <activity android:name=".activity.VerticalBarViewActivity"/>
+        <activity android:name=".activity.LineProgressOActivity"/>
     </application>
 
 </manifest>

@@ -19,15 +19,15 @@
         <attr name="start_color" format="color"/>
         <attr name="end_color" format="color"/>
     </declare-styleable>
-    
+
     <declare-styleable name="LineProgressBarView">
-        <attr name="bar_width" format="dimension"/>
-        <attr name="bar_height" format="dimension"/>
-        <attr name="margin" format="integer"/>
+       <attr name="bar_width"/>
+       <attr name="bar_height"/>
+        <attr name="margin"/>
         <attr name="num_a" format="float"/>
         <attr name="num_b" format="float"/>
-        <attr name="bar_type" format="integer"/>
-        <attr name="background_color" format="color"/>
+        <attr name="bar_type"/>
+        <attr name="background_color"/>
         <attr name="color_a" format="color"/>
         <attr name="color_b" format="color"/>
     </declare-styleable>
@@ -77,4 +77,19 @@
     </declare-styleable>
 
 
+    <declare-styleable name="LineProgressOView">
+        <attr name="bar_height"/>
+        <attr name="bar_width"/>
+        <attr name="margin"/>
+        <attr name="background_color"/>
+        <attr name="num" format="float"/>
+        <attr name="bar_type"/>
+        <attr name="bar_color" format="color"/>
+    </declare-styleable>
+
+    <attr name="bar_width" format="dimension"/>
+    <attr name="bar_height" format="dimension"/>
+    <attr name="bar_type" format="integer"/>
+    <attr name="margin" format="integer"/>
+    <attr name="background_color" format="color"/>
 </resources>

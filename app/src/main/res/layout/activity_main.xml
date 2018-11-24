@@ -14,4 +14,7 @@
     <Button android:id="@+id/btn3"
             style="@style/BtnStyle"
             android:text="圆角小竖条"/>
+    <Button android:id="@+id/btn4"
+            style="@style/BtnStyle"
+            android:text="一个方向横线进度条"/>
 </GridLayout>
