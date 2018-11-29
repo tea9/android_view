@@ -20,6 +20,8 @@
         <activity android:name=".activity.RingProgressBarActivity"/>
         <activity android:name=".activity.VerticalBarViewActivity"/>
         <activity android:name=".activity.LineProgressOActivity"/>
+        <activity android:name=".activity.PolygonActivity"/>
+        <activity android:name=".activity.PolygonViewActivity"/>
     </application>
 
 </manifest>

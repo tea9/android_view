@@ -17,4 +17,10 @@
     <Button android:id="@+id/btn4"
             style="@style/BtnStyle"
             android:text="一个方向横线进度条"/>
+    <Button android:id="@+id/btn5"
+            style="@style/BtnStyle"
+            android:text="能力多边形"/>
+    <Button android:id="@+id/btn6"
+            style="@style/BtnStyle"
+            android:text="能力多边形1"/>
 </GridLayout>

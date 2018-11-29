@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import com.demo.android_view.activity.LineProgressBarActivity
-import com.demo.android_view.activity.LineProgressOActivity
-import com.demo.android_view.activity.RingProgressBarActivity
-import com.demo.android_view.activity.VerticalBarViewActivity
+import com.demo.android_view.activity.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -17,6 +14,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn2 -> startActivity(Intent(this,RingProgressBarActivity::class.java))
             R.id.btn3 -> startActivity(Intent(this,VerticalBarViewActivity::class.java))
             R.id.btn4 -> startActivity(Intent(this,LineProgressOActivity::class.java))
+            R.id.btn5 -> startActivity(Intent(this,PolygonActivity::class.java))
+            R.id.btn6 -> startActivity(Intent(this,PolygonViewActivity::class.java))
         }
     }
 
@@ -28,5 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn2.setOnClickListener(this)
         btn3.setOnClickListener(this)
         btn4.setOnClickListener(this)
+        btn5.setOnClickListener(this)
+        btn6.setOnClickListener(this)
     }
 }
